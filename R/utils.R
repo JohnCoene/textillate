@@ -1,5 +1,5 @@
 effect_it <- function(t, effect = "hinge", delay.scale = 1.5, delay = 50, sync = FALSE,
-                      shuffle = FALSE, reverse = FALSE, what = "in", ...){
+                      shuffle = FALSE, reverse = FALSE, what = "in"){
 
   t$x$opts[[what]]$effect <- effect
   t$x$opts[[what]]$delayScale <- delay.scale

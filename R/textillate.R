@@ -2,6 +2,7 @@
 #'
 #' Animate text
 #'
+#' @param text text to animate.
 #' @param ... any element.
 #' @param loop enable looping.
 #' @param min.display.time sets the minimum display time for each text before it is replaced.
@@ -9,13 +10,7 @@
 #' @param auto.start set whether or not to automatically start animating.
 #' @param in.effects,out.effects custom set of 'in' and 'out' effects. This effects whether or not the character
 #' is shown/hidden before or after an animation.
-#' @param in.delay,out.delay effect name.
-#' @param in.delay.scale set the delay factor applied to each consecutive character.
-#' @param in.delay,out.delay set the delay between each character.
-#' @param in.sync,out.sync set to true to animate all the characters at the same time.
-#' @param in.shuffle,out.shuffle randomize the character sequence.
-#' @param in.reverse,out.reverse reverse the character sequence.
-#' @param in.callback,out.callback callback that executes once the animation has finished.
+#' @param type set the type of token to animate (available types: \code{char} and \code{word})
 #' @param width,height dimensions.
 #' @param elementId id of html element.
 #'
@@ -26,6 +21,7 @@
 #' }
 #'
 #' @examples
+#' # may not work in RStudio viewer, open in browser
 #' textillate("Textillate") # basic
 #'
 #' textillate("Effects", `in` = list(effect = "rollIn")) # effects
@@ -38,6 +34,9 @@
 #'     effect = "flipInX",
 #'     delay = 1000
 #'   )
+#'
+#' @details See \href{textillate.js.org/}{http://textillate.js.org/} for examples.
+#' \code{reserve = TRUE} doesn't make sense with \code{sync = TRUE}.
 #'
 #' @import htmlwidgets
 #'

@@ -10,6 +10,8 @@ textillate(text, ..., loop = FALSE, min.display.time = 2000,
   height = NULL, elementId = NULL)
 }
 \arguments{
+\item{text}{text to animate.}
+
 \item{...}{any element.}
 
 \item{loop}{enable looping.}
@@ -23,23 +25,11 @@ textillate(text, ..., loop = FALSE, min.display.time = 2000,
 \item{in.effects, out.effects}{custom set of 'in' and 'out' effects. This effects whether or not the character
 is shown/hidden before or after an animation.}
 
+\item{type}{set the type of token to animate (available types: \code{char} and \code{word})}
+
 \item{width, height}{dimensions.}
 
 \item{elementId}{id of html element.}
-
-\item{in.delay, out.delay}{effect name.}
-
-\item{in.delay.scale}{set the delay factor applied to each consecutive character.}
-
-\item{in.delay, out.delay}{set the delay between each character.}
-
-\item{in.sync, out.sync}{set to true to animate all the characters at the same time.}
-
-\item{in.shuffle, out.shuffle}{randomize the character sequence.}
-
-\item{in.reverse, out.reverse}{reverse the character sequence.}
-
-\item{in.callback, out.callback}{callback that executes once the animation has finished.}
 }
 \description{
 Animate text
@@ -49,8 +39,12 @@ Effects:
 \itemize{
   \item{\code{}}
 }
+
+See \href{textillate.js.org/}{http://textillate.js.org/} for examples.
+\code{reserve = TRUE} doesn't make sense with \code{sync = TRUE}.
 }
 \examples{
+# may not work in RStudio viewer, open in browser
 textillate("Textillate") # basic
 
 textillate("Effects", `in` = list(effect = "rollIn")) # effects

@@ -6,11 +6,40 @@
 \title{Customise effects}
 \usage{
 textillate_in(t, effect = "fadeInLeftBig", delay.scale = 1.5, delay = 50,
-  sync = FALSE, shuffle = FALSE, reverse = FALSE, ...)
+  sync = FALSE, shuffle = FALSE, reverse = FALSE)
 
 textillate_out(t, effect = "hinge", delay.scale = 1.5, delay = 50,
-  sync = FALSE, shuffle = FALSE, reverse = FALSE, ...)
+  sync = FALSE, shuffle = FALSE, reverse = FALSE)
+}
+\arguments{
+\item{t}{and object of class \code{textillate} as returned by \code{\link{textillate}}.}
+
+\item{effect}{set effect name.}
+
+\item{delay.scale}{set the delay factor applied to each consecutive character.}
+
+\item{delay}{set the delay between each character.}
+
+\item{sync}{set to true to animate all the characters at the same time.}
+
+\item{shuffle}{randomize the character sequence.}
+
+\item{reverse}{reverse the character sequence.}
 }
 \description{
 Cutomise in  and out effect.
+}
+\details{
+See \href{textillate.js.org/}{http://textillate.js.org/} for examples.
+\code{reserve = TRUE} doesn't make sense with \code{sync = TRUE}.
+}
+\examples{
+# may not work in RStudio viewer, open in browser
+textillate("Duration and effect", min.display.time = 5000) \%>\%
+  textillate_in(
+    effect = "flipInX",
+    delay = 1000,
+    shuffle = TRUE
+  )
+
 }
