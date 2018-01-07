@@ -1,7 +1,7 @@
 dependencies:
- - name: jQuery
+ - name: jquery
    version: 3.2.1
-   src: htmlwidgets/lib/jQuery-3.2.1
+   src: htmlwidgets/lib/jquery-3.2.1
    script: jquery.min.js
  - name: lettering
    version: 0.7.0
