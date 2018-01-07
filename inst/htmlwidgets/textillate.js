@@ -14,7 +14,7 @@ HTMLWidgets.widget({
 
         el.innerText = x.text;
         $(function () {
-	        $('.tlt').textillate(x.opts);
+	        $('#' + el.id).textillate(x.opts);
         });
 
       },
