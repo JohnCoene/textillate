@@ -1,0 +1,17 @@
+dependencies:
+ - name: jQuery
+   version: 3.2.1
+   src: htmlwidgets/lib/jQuery-3.2.1
+   script: jquery.min.js
+ - name: lettering
+   version: 0.7.0
+   src: htmlwidgets/lib/lettering-0.7.0
+   script: jquery.lettering.js
+ - name: animate
+   version: 3.5.2
+   src: htmlwidgets/lib/animate-3.5.2
+   stylesheet: animate.min.css
+ - name: textillate
+   version: 0.1.0
+   src: htmlwidgets/lib/textillate
+   script: jquery.textillate.js
