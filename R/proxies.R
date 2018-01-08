@@ -2,6 +2,8 @@
 #'
 #' Shiny proxies.
 #'
+#' @param proxy an object of class \code{txtProxy} as returned by \code{\link{txtProxy}}.
+#'
 #' @examples
 #' if(interactive()){
 #'   library(shiny)

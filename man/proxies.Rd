@@ -15,6 +15,9 @@ txt_in_p(proxy)
 
 txt_out_p(proxy)
 }
+\arguments{
+\item{proxy}{an object of class \code{txtProxy} as returned by \code{\link{txtProxy}}.}
+}
 \description{
 Shiny proxies.
 }
@@ -44,7 +47,9 @@ if(interactive()){
 
   server <- function(input, output){
     output$textillate <- renderTxt({
-      txt("Click to start", auto.start = FALSE)
+      txt("Click to start", auto.start = FALSE) \%>\%
+        txt_in(effect = "fadeIn") \%>\%
+        txt_out(effect = "bounce")
     })
 
     observeEvent(input$start, {

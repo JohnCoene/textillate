@@ -90,6 +90,8 @@ textillate_html <- function(id, style, class, ...){
 #' @param env The environment in which to evaluate \code{expr}.
 #' @param quoted Is \code{expr} a quoted expression (with \code{quote()})? This
 #'   is useful if you want to save an expression in a variable.
+#' @param id id of \code{txtOutput}.
+#' @param session shiny session.
 #'
 #' @name textillate-shiny
 #'

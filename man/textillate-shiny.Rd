@@ -26,6 +26,10 @@ string and have \code{'px'} appended.}
 
 \item{quoted}{Is \code{expr} a quoted expression (with \code{quote()})? This
 is useful if you want to save an expression in a variable.}
+
+\item{id}{id of \code{txtOutput}.}
+
+\item{session}{shiny session.}
 }
 \description{
 Output and render functions for using textillate within Shiny
