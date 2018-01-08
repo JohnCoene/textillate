@@ -2,13 +2,16 @@
 % Please edit documentation in R/textillate.R
 \name{textillate-shiny}
 \alias{textillate-shiny}
-\alias{textillateOutput}
-\alias{renderTextillate}
+\alias{txtOutput}
+\alias{renderTxt}
+\alias{txtProxy}
 \title{Shiny bindings for textillate}
 \usage{
-textillateOutput(outputId, width = "100\%", height = "400px")
+txtOutput(outputId, width = "100\%", height = "400px")
 
-renderTextillate(expr, env = parent.frame(), quoted = FALSE)
+renderTxt(expr, env = parent.frame(), quoted = FALSE)
+
+txtProxy(id, session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
 \item{outputId}{output variable to read from}

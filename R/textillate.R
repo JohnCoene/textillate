@@ -22,15 +22,15 @@
 #'
 #' @examples
 #' # may not work in RStudio viewer, open in browser
-#' textillate("Textillate") # basic
+#' txt("Textillate") # basic
 #'
-#' textillate("Effects", `in` = list(effect = "rollIn")) # effects
+#' txt("Effects", `in` = list(effect = "rollIn")) # effects
 #'
-#' textillate("Duration and effect", `in` = list(effect = "flipInX"), min.display.time = 5000)
+#' txt("Duration and effect", `in` = list(effect = "flipInX"), min.display.time = 5000)
 #'
 #' # OR
-#' textillate("Duration and effect", min.display.time = 5000) %>%
-#'   textillate_in(
+#' txt("Duration and effect", min.display.time = 5000) %>%
+#'   txt_in(
 #'     effect = "flipInX",
 #'     delay = 1000
 #'   )
@@ -40,12 +40,12 @@
 #'
 #' @import htmlwidgets
 #'
-#' @seealso \code{\link{textillate_in}}, \code{\link{textillate_out}}
+#' @seealso \code{\link{txt_in}}, \code{\link{txt_out}}
 #'
 #' @export
-textillate <- function(text, ..., loop = FALSE, min.display.time = 2000, initial.delay = 0, auto.start = TRUE,
-                       in.effects = list(), out.effects = list("hinge"), type = "char",
-                       width = NULL, height = NULL, elementId = NULL) {
+txt <- function(text, ..., loop = FALSE, min.display.time = 2000, initial.delay = 0, auto.start = TRUE,
+                in.effects = list(), out.effects = list("hinge"), type = "char",
+                width = NULL, height = NULL, elementId = NULL) {
 
   # forward options using x
   x = list(
@@ -94,13 +94,23 @@ textillate_html <- function(id, style, class, ...){
 #' @name textillate-shiny
 #'
 #' @export
-textillateOutput <- function(outputId, width = '100%', height = '400px'){
+txtOutput <- function(outputId, width = '100%', height = '400px'){
   htmlwidgets::shinyWidgetOutput(outputId, 'textillate', width, height, package = 'textillate')
 }
 
 #' @rdname textillate-shiny
 #' @export
-renderTextillate <- function(expr, env = parent.frame(), quoted = FALSE) {
+renderTxt <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) { expr <- substitute(expr) } # force quoted
-  htmlwidgets::shinyRenderWidget(expr, textillateOutput, env, quoted = TRUE)
+  htmlwidgets::shinyRenderWidget(expr, txtOutput, env, quoted = TRUE)
+}
+
+#' @rdname textillate-shiny
+#' @export
+txtProxy <- function(id, session = shiny::getDefaultReactiveDomain()){
+
+  proxy <- list(id = id, session = session)
+  class(proxy) <- "txtProxy"
+
+  return(proxy)
 }
