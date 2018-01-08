@@ -34,11 +34,6 @@ is shown/hidden before or after an animation.}
 Animate text
 }
 \details{
-Effects:
-\itemize{
-  \item{\code{}}
-}
-
 See \href{textillate.js.org/}{http://textillate.js.org/} for examples.
 \code{reserve = TRUE} doesn't make sense with \code{sync = TRUE}.
 }

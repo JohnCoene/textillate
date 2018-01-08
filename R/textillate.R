@@ -14,12 +14,6 @@
 #' @param width,height dimensions.
 #' @param elementId id of html element.
 #'
-#' @details
-#' Effects:
-#' \itemize{
-#'   \item{\code{}}
-#' }
-#'
 #' @examples
 #' # may not work in RStudio viewer, open in browser
 #' txt("Textillate") # basic
@@ -37,6 +31,7 @@
 #'
 #' @details See \href{textillate.js.org/}{http://textillate.js.org/} for examples.
 #' \code{reserve = TRUE} doesn't make sense with \code{sync = TRUE}.
+#' Generated element includes \code{tlt} class.
 #'
 #' @import htmlwidgets
 #'
