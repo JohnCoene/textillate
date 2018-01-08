@@ -14,6 +14,8 @@
 
 ## Examples
 
+### RMarkdown
+
 ``` r
 textillate(
   "Textillate"
@@ -29,4 +31,64 @@ textillate("Duration and effect", min.display.time = 5000) %>%
     delay = 1000,
     shuffle = TRUE
   )
+```
+
+### Shiny
+
+*proxies*
+
+```r
+if(interactive()){
+  library(shiny)
+
+  ui <- fluidPage(
+    actionButton(
+      "start",
+      "start"
+    ),
+    actionButton(
+      "stop",
+      "stop"
+    ),
+    actionButton(
+      "in",
+      "in"
+    ),
+    actionButton(
+      "out",
+      "out"
+    ),
+    txtOutput('textillate')
+  )
+
+  server <- function(input, output){
+    output$textillate <- renderTxt({
+      txt("Click to start", auto.start = FALSE) %>%
+        txt_in(effect = "fadeIn") %>%
+        txt_out(effect = "bounce")
+    })
+
+    observeEvent(input$start, {
+      txtProxy("textillate") %>%
+        txt_start_p()
+    })
+
+    observeEvent(input$start, {
+      txtProxy("textillate") %>%
+        txt_stop_p()
+    })
+
+    observeEvent(input$start, {
+      txtProxy("textillate") %>%
+        txt_in_p()
+    })
+
+    observeEvent(input$out, {
+      txtProxy("textillate") %>%
+        txt_out_p()
+    })
+  }
+
+  shinyApp(ui, server)
+}
 ```
