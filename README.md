@@ -21,12 +21,28 @@ textillate(
   "Textillate"
 )
 
-textillate("Effects", `in` = list(effect = "rollIn"))
+textillate(
+  "Effects", 
+  `in` = list(
+    effect = "rollIn"
+  )
+)
 
-textillate("Duration and effect", `in` = list(effect = "flipInX"), min.display.time = 5000)
+# Pass options as list
+textillate(
+  "Duration and effect", 
+  `in` = list(
+    effect = "flipInX"
+  ), 
+  min.display.time = 5000
+)
 
-textillate("Duration and effect", min.display.time = 5000) %>%
-  textillate_in(
+# Or pipe
+textillate(
+    "Duration and effect", 
+    min.display.time = 5000
+  ) %>%
+  textillateIn(
     effect = "flipInX",
     delay = 1000,
     shuffle = TRUE
@@ -58,34 +74,34 @@ if(interactive()){
       "out",
       "out"
     ),
-    txtOutput('textillate')
+    textillateOutput('textillate')
   )
 
   server <- function(input, output){
-    output$textillate <- renderTxt({
-      txt("Click to start", auto.start = FALSE) %>%
-        txt_in(effect = "fadeIn") %>%
-        txt_out(effect = "bounce")
+    output$textillate <- renderTextillate({
+      textillate("Click to start", auto.start = FALSE) %>%
+        textillateIn(effect = "fadeIn") %>%
+        textillateOut(effect = "bounce")
     })
 
     observeEvent(input$start, {
-      txtProxy("textillate") %>%
-        txt_start_p()
+      textillateProxy("textillate") %>%
+        textillateStartProxy()
     })
 
     observeEvent(input$start, {
-      txtProxy("textillate") %>%
-        txt_stop_p()
+      textillateProxy("textillate") %>%
+        textillateStopProxy()
     })
 
     observeEvent(input$start, {
-      txtProxy("textillate") %>%
-        txt_in_p()
+      textillateProxy("textillate") %>%
+        textillateInProxy()
     })
 
     observeEvent(input$out, {
-      txtProxy("textillate") %>%
-        txt_out_p()
+      textillateProxy("textillate") %>%
+        textillateOutProxy()
     })
   }
 

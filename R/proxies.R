@@ -2,7 +2,7 @@
 #'
 #' Shiny proxies.
 #'
-#' @param proxy an object of class \code{txtProxy} as returned by \code{\link{txtProxy}}.
+#' @param proxy an object of class \code{txtProxy} as returned by \code{\link{textillateProxy}}.
 #'
 #' @examples
 #' if(interactive()){
@@ -25,34 +25,34 @@
 #'       "out",
 #'       "out"
 #'     ),
-#'     txtOutput('textillate')
+#'     textillateOutput('textillate')
 #'   )
 #'
 #'   server <- function(input, output){
-#'     output$textillate <- renderTxt({
-#'       txt("Click to start", auto.start = FALSE) %>%
-#'         txt_in(effect = "fadeIn") %>%
-#'         txt_out(effect = "bounce")
+#'     output$textillate <- renderTextillate({
+#'       textillate("Click to start", auto.start = FALSE) %>%
+#'         textillateIn(effect = "fadeIn") %>%
+#'         textillateOut(effect = "bounce")
 #'     })
 #'
 #'     observeEvent(input$start, {
-#'       txtProxy("textillate") %>%
-#'         txt_start_p()
+#'       textillateProxy("textillate") %>%
+#'         textillateStartProxy()
 #'     })
 #'
 #'     observeEvent(input$start, {
-#'       txtProxy("textillate") %>%
-#'         txt_stop_p()
+#'       textillateProxy("textillate") %>%
+#'         textillateStopProxy()
 #'     })
 #'
 #'     observeEvent(input$start, {
-#'       txtProxy("textillate") %>%
-#'         txt_in_p()
+#'       textillateProxy("textillate") %>%
+#'         textillateInProxy()
 #'     })
 #'
 #'     observeEvent(input$out, {
-#'       txtProxy("textillate") %>%
-#'         txt_out_p()
+#'       textillateProxy("textillate") %>%
+#'         textillateOutProxy()
 #'     })
 #'   }
 #'
@@ -61,7 +61,7 @@
 #'
 #' @rdname proxies
 #' @export
-txt_start_p <- function(proxy){
+textillateStartProxy <- function(proxy){
 
   data <- list(id = proxy$id)
 
@@ -72,7 +72,7 @@ txt_start_p <- function(proxy){
 
 #' @rdname proxies
 #' @export
-txt_stop_p <- function(proxy){
+textillateStopProxy <- function(proxy){
 
   data <- list(id = proxy$id)
 
@@ -83,7 +83,7 @@ txt_stop_p <- function(proxy){
 
 #' @rdname proxies
 #' @export
-txt_in_p <- function(proxy){
+textillateInProxy <- function(proxy){
 
   data <- list(id = proxy$id)
 
@@ -94,7 +94,7 @@ txt_in_p <- function(proxy){
 
 #' @rdname proxies
 #' @export
-txt_out_p <- function(proxy){
+textillateOutProxy <- function(proxy){
 
   data <- list(id = proxy$id)
 

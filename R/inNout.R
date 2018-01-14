@@ -2,7 +2,7 @@
 #'
 #' Cutomise in  and out effect.
 #'
-#' @param t and object of class \code{textillate} as returned by \code{\link{txt}}.
+#' @param t and object of class \code{textillate} as returned by \code{\link{textillate}}.
 #' @param effect set effect name.
 #' @param delay.scale set the delay factor applied to each consecutive character.
 #' @param delay set the delay between each character.
@@ -15,8 +15,8 @@
 #'
 #' @examples
 #' # may not work in RStudio viewer, open in browser
-#' txt("Duration and effect", min.display.time = 5000) %>%
-#'   txt_in(
+#' textillate("Duration and effect", min.display.time = 5000) %>%
+#'   textillateIn(
 #'     effect = "flipInX",
 #'     delay = 1000,
 #'     shuffle = TRUE
@@ -24,7 +24,7 @@
 #'
 #' @rdname effects
 #' @export
-txt_in <- function(t, effect = "fadeInLeftBig", delay.scale = 1.5, delay = 50, sync = FALSE,
+textillateIn <- function(t, effect = "fadeInLeftBig", delay.scale = 1.5, delay = 50, sync = FALSE,
                           shuffle = FALSE, reverse = FALSE){
 
   effect_it(t, effect = effect, delay.scale = delay.scale, delay = delay, sync = sync,
@@ -33,7 +33,7 @@ txt_in <- function(t, effect = "fadeInLeftBig", delay.scale = 1.5, delay = 50, s
 
 #' @rdname effects
 #' @export
-txt_out <- function(t, effect = "hinge", delay.scale = 1.5, delay = 50, sync = FALSE,
+textillateOut <- function(t, effect = "hinge", delay.scale = 1.5, delay = 50, sync = FALSE,
                            shuffle = FALSE, reverse = FALSE){
   effect_it(t, effect = effect, delay.scale = delay.scale, delay = delay, sync = sync,
             shuffle = shuffle, reverse = reverse, what = "in")
