@@ -4,8 +4,6 @@
 
 [textillate.js](http://textillate.js.org/) for R.
 
-![textillate](http://john-coene.com/img/textillate.gif)
-
 ## Dependencies
 
 * [jQuery](http://jquery.com/download/)
