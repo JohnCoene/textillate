@@ -87,12 +87,12 @@ if(interactive()){
         textillateStartProxy()
     })
 
-    observeEvent(input$start, {
+    observeEvent(input$stop, {
       textillateProxy("textillate") %>%
         textillateStopProxy()
     })
 
-    observeEvent(input$start, {
+    observeEvent(input$in, {
       textillateProxy("textillate") %>%
         textillateInProxy()
     })
